@@ -17,7 +17,7 @@ def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)
         existing_product = db.query(models.Product).filter(
             models.Product.name == product.name).first()
         if existing_product:
-            logger.warn(f"Product name exists. name -- {product.name}")
+            logger.warning(f"Product name exists. name -- {product.name}")
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Product with this name already exists"
@@ -27,7 +27,6 @@ def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)
         db.commit()
         db.refresh(new_product)
         return new_product
-
     except HTTPException as http_exc:
         raise http_exc
     except Exception as e:
@@ -51,7 +50,7 @@ def get_product(id: int, db: Session = Depends(get_db)):
         product = db.query(models.Product).filter(
             models.Product.id == id).first()
         if product is None:
-            logger.warn(f"Product not found. id: {id}")
+            logger.warning(f"Product not found. id: {id}")
             raise HTTPException(status_code=404, detail="Product not found")
         return product
     except Exception as e:
@@ -86,7 +85,7 @@ def delete_product(id: int, db: Session = Depends(get_db)):
     try:
         product = db.query(models.Product).filter(models.Product.id == id).first()
         if product is None:
-            logger.warn(f"Attempt to delete non-existent product with id: {id}")
+            logger.warning(f"Attempt to delete non-existent product with id: {id}")
             raise HTTPException(status_code=404, detail="Product not found")
 
         db.delete(product)
@@ -97,3 +96,14 @@ def delete_product(id: int, db: Session = Depends(get_db)):
     except Exception as e:
         logger.error(e)
         raise HTTPException(status_code=500, detail="Server error")
+
+
+@products_router.post("/products/bulk", response_model=List[schemas.ProductResponse])
+def create_products(products: List[schemas.ProductCreate], db: Session = Depends(get_db)):
+    created_products = []
+    for product_data in products:
+        new_product = models.Product(**product_data.model_dump())
+        db.add(new_product)
+        created_products.append(new_product)
+    db.commit()
+    return created_products

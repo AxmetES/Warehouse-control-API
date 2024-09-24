@@ -28,10 +28,11 @@ def create_order(order: schemas.OrderCreate, db:Session = Depends(get_db)):
                     detail=f"Product with ID {item.product_id} not found")
 
             if product.stock_quantity < item.quantity:
-                logger.warn(f"Not enough stock for product ID {item.product_id}")
+                logger.warn(f'''Not enough stock for product ID {item.product_id}
+                in order:{item.quantity}, in stock:{product.stock_quantity}''')
                 raise HTTPException(
                     status_code=400,
-                    detail=f"Not enough stock for product ID {item.product_id}")
+                    detail=f'''Not enough stock for product ID {item.product_id}, in order:{item.quantity}, in stock:{product.stock_quantity}''')
 
             product.stock_quantity -= item.quantity
             order_item = models.OrderItem(
@@ -44,7 +45,6 @@ def create_order(order: schemas.OrderCreate, db:Session = Depends(get_db)):
         db.commit()
         db.refresh(new_order)
         return new_order
-
     except HTTPException as http_exc:
         raise http_exc
     except Exception as e:

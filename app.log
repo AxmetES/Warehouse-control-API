@@ -1,0 +1,32 @@
+2024-09-23 10:27:18,800 - WARNING - Product not found. id -- 6
+2024-09-23 10:27:20,412 - WARNING - Product not found. id -- 7
+2024-09-23 10:27:26,081 - WARNING - Product not found. id -- 6
+2024-09-23 16:30:03,157 - WARNING - Product name exists. name -- PRO X TKL
+2024-09-23 16:30:03,158 - ERROR - 400: Product with this name already exists
+2024-09-23 16:30:53,105 - WARNING - Product name exists. name -- PRO X TKL
+2024-09-23 16:31:22,905 - WARNING - Product name exists. name -- PRO X TKL
+2024-09-23 16:33:45,767 - WARNING - Product name exists. name -- PRO X TKL
+2024-09-23 16:48:28,113 - WARNING - Product name exists. name -- PRO X TKL MAX PRO
+2024-09-23 17:05:44,113 - ERROR - 404: Product with ID 1 not found
+2024-09-24 08:58:51,687 - WARNING - Not enough stock for product ID 8
+2024-09-24 09:08:48,000 - WARNING - Not enough stock for product ID 8
+2024-09-24 09:11:29,401 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 09:11:32,086 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 09:11:43,124 - WARNING - Not enough stock for product ID 8
+                in order:5, in stock:3
+2024-09-24 09:13:31,403 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 09:14:01,635 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 09:14:03,905 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 09:14:05,295 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 09:14:07,423 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 09:14:07,917 - WARNING - Not enough stock for product ID 8
+                in order:4, in stock:3
+2024-09-24 11:36:42,471 - WARNING - Product name exists. name -- lazer Mouse Razor
+2024-09-24 11:37:18,721 - ERROR - Unexpected error occurred: 'ProductCreate' object has no attribute 'dimodel_dumpct'

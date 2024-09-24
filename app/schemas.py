@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import BaseModel, conint
+from pydantic import BaseModel, conint, ConfigDict
 from typing import List, Optional
 from datetime import datetime
 
@@ -26,8 +26,7 @@ class ProductUpdate(BaseModel):
 class ProductResponse(ProductBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class OrderItemBase(BaseModel):
@@ -43,8 +42,7 @@ class OrderItemResponse(OrderItemBase):
     id: int
     product: ProductResponse
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class OrderStatusEnum(str, Enum):
@@ -67,12 +65,10 @@ class OrderResponse(OrderBase):
     updated_at: Optional[datetime]
     order_items: List[OrderItemResponse]
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class OrderStatusUpdate(OrderBase):
     status: OrderStatusEnum
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

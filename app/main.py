@@ -2,8 +2,8 @@ import uvicorn
 from fastapi import FastAPI
 
 from app.database import Base, engine
-from products_router import products_router
-from orders_router import orders_router
+from app.products_router import products_router
+from app.orders_router import orders_router
 
 
 app = FastAPI()
