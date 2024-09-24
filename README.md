@@ -1,7 +1,8 @@
 ## Warehouse-control-API
 
 ### Description:
-App for warehouse control by API.
+App for warehouse, products and orders
+control by API.
 
 ### get started:
 git clone project:
