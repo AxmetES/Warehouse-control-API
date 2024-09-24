@@ -8,7 +8,7 @@ git clone project:
 https://github.com/AxmetES/Warehouse-control-API.git
 
 ### got to project rep:
-```cd /Warehouse-API```
+```cd /Warehouse-control-API```
 
 ### start app:
 ```docker-compose up --build```
