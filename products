@@ -1,0 +1,44 @@
+[
+    {
+        "name": "PRO X TKL",
+        "description": "LIGHTSPEED Gaming Keyboard",
+        "price": 179.99,
+        "stock_quantity": 32,
+        "id": 5
+    },
+    {
+        "name": "PRO X TKL MAX",
+        "description": "LIGHTSPEED Gaming Keyboard",
+        "price": 399.99,
+        "stock_quantity": 22,
+        "id": 6
+    },
+    {
+        "name": "PRO X TKL MAX PRO",
+        "description": "LIGHTSPEED Gaming Keyboard",
+        "price": 599.99,
+        "stock_quantity": 15,
+        "id": 7
+    },
+    {
+        "name": "PC dell",
+        "description": "A powerful desktop PC",
+        "price": 4000.0,
+        "stock_quantity": 8,
+        "id": 2
+    },
+    {
+        "name": "PRO X TKL RAPID",
+        "description": "Tenkeyless Wired Gaming Keyboard with Analog Switches",
+        "price": 199.99,
+        "stock_quantity": 16,
+        "id": 4
+    },
+    {
+        "name": "lazer Mouse Razor",
+        "description": "SPEED Gaming mouse",
+        "price": 233.99,
+        "stock_quantity": 4,
+        "id": 8
+    }
+]
